@@ -8,7 +8,7 @@
 </head>
 <body>
     <div>
-        <h1>Love mo ko?</h1>
+        <h1 id="hello">Love mo ko?</h1>
         <button id="yesButton">Yes</button>
         <button id="no">No</button>
     </div>
@@ -35,11 +35,16 @@
     </style>
     <script>
         document.getElementById("yesButton").addEventListener("click", function(){ 
-            alert("yay i love you more <3 ");
+            const deleteButton = document.getElementById("yesButton");
+            const deleteButton2 = document.getElementById("no");
+            const text = document.getElementById("hello");
+            deleteButton.style.display = "none";
+            deleteButton2.style.display = "none";
+            text.innerHTML = "yay i love you more <3 ";
         });
 
         var b = document.getElementById("no");
-        b.addEventListener("mouseover", change);
+        b.addEventListener("click", change);
         function change (){
             var i = Math.floor(Math.random()*1000)+1;
             var j = Math.floor(Math.random()*700)+1;
